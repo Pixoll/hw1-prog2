@@ -1,8 +1,11 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public class OrdenCompra {
     private Date fecha;
     private String estado;
+    private ArrayList<Pago> pagos;
+    private ArrayList<DetalleOrden> ordenes;
 
     public OrdenCompra() {
     }
