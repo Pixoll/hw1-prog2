@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+
 public class Cliente {
     private String nombre;
     private String rut;
+    private Direccion direccion;
+    private ArrayList<OrdenCompra> compras;
 
     public Cliente() {
     }
@@ -19,6 +23,14 @@ public class Cliente {
 
     public void setRut(String rut) {
         this.rut = rut;
+    }
+
+    public Direccion getDireccion() {
+        return this.direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 
     public String toString() {

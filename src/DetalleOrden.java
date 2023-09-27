@@ -2,6 +2,7 @@ public class DetalleOrden {
     private int cantidad;
     private Articulo articulo;
     private OrdenCompra compra;
+
     public DetalleOrden() {
     }
 
@@ -28,7 +29,7 @@ public class DetalleOrden {
     public void setCompra(OrdenCompra compra) {
         this.compra = compra;
     }
-    
+
     public void calcPrecio() {
     }
 
@@ -44,7 +45,4 @@ public class DetalleOrden {
     public String toString() {
         return "DetalleOrden " + this.cantidad;
     }
-
-
-
 }

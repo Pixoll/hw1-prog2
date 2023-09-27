@@ -4,6 +4,8 @@ import java.util.Date;
 public class OrdenCompra {
     private Date fecha;
     private String estado;
+    private Cliente cliente;
+    private DocTributario documento;
     private ArrayList<Pago> pagos;
     private ArrayList<DetalleOrden> ordenes;
 
@@ -24,6 +26,22 @@ public class OrdenCompra {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public DocTributario getDocumento() {
+        return this.documento;
+    }
+
+    public void setDocumento(DocTributario documento) {
+        this.documento = documento;
     }
 
     public void calcPrecioSinIVA() {

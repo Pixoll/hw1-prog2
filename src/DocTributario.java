@@ -1,9 +1,11 @@
 import java.util.Date;
 
-public class DocTributario {
+public abstract class DocTributario {
     private String numero;
     private String rut;
     private Date fecha;
+    private Direccion direccion;
+    private OrdenCompra compra;
 
     public DocTributario() {
     }
@@ -30,6 +32,22 @@ public class DocTributario {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public Direccion getDireccion() {
+        return this.direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    public OrdenCompra getCompra() {
+        return this.compra;
+    }
+
+    public void setCompra(OrdenCompra compra) {
+        this.compra = compra;
     }
 
     public String toString() {
