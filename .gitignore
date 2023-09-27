@@ -3,4 +3,4 @@ out/
 !**/src/test/**/out/
 .idea/
 UML.png
-Homework1.iml
+*.iml
