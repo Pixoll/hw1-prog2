@@ -6,7 +6,10 @@ public class Cliente {
     private Direccion direccion;
     private ArrayList<OrdenCompra> compras;
 
-    public Cliente() {
+    public Cliente(String nombre, String rut, Direccion direccion) {
+        this.nombre = nombre;
+        this.rut = rut;
+        this.direccion = direccion;
     }
 
     public String getNombre() {

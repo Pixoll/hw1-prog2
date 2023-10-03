@@ -7,7 +7,12 @@ public abstract class DocTributario {
     private Direccion direccion;
     private OrdenCompra compra;
 
-    public DocTributario() {
+    public DocTributario(String numero, String rut, Date fecha, Direccion direccion, OrdenCompra compra) {
+        this.numero = numero;
+        this.rut = rut;
+        this.fecha = fecha;
+        this.direccion = direccion;
+        this.compra = compra;
     }
 
     public String getNumero() {

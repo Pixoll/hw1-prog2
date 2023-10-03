@@ -9,7 +9,11 @@ public class OrdenCompra {
     private ArrayList<Pago> pagos;
     private ArrayList<DetalleOrden> ordenes;
 
-    public OrdenCompra() {
+    public OrdenCompra(Date fecha, String estado, Cliente cliente, DocTributario documento) {
+        this.fecha = fecha;
+        this.estado = estado;
+        this.cliente = cliente;
+        this.documento = documento;
     }
 
     public Date getFecha() {
