@@ -1,17 +1,13 @@
 public class Articulo {
-    private float peso;
     private String nombre;
     private String descripcion;
     private float precio;
+    private float peso;
 
-    public Articulo() {
-    }
-
-    public float getPeso() {
-        return this.peso;
-    }
-
-    public void setPeso(float peso) {
+    public Articulo(String nombre, String descripcion, float precio, float peso) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
         this.peso = peso;
     }
 
@@ -37,6 +33,14 @@ public class Articulo {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    public float getPeso() {
+        return this.peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
     }
 
     public String toString() {

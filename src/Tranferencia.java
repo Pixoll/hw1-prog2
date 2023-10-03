@@ -1,11 +1,14 @@
+import java.util.Date;
+
 public class Tranferencia extends Pago {
     private String banco;
     private String numCuenta;
 
-    public Tranferencia() {
-        super();
+    public Tranferencia(float monto, Date fecha, String banco, String numCuenta) {
+        super(monto, fecha);
+        this.banco = banco;
+        this.numCuenta = numCuenta;
     }
-
 
     public String getBanco() {
         return banco;

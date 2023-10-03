@@ -1,9 +1,12 @@
 public class DetalleOrden {
-    private int cantidad;
     private Articulo articulo;
+    private int cantidad;
     private OrdenCompra compra;
 
-    public DetalleOrden() {
+    public DetalleOrden(Articulo articulo, int cantidad, OrdenCompra compra) {
+        this.articulo = articulo;
+        this.cantidad = cantidad;
+        this.compra = compra;
     }
 
     public int getCantidad() {
