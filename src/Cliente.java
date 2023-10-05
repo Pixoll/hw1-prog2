@@ -37,12 +37,12 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public void addCompra(OrdenCompra compra){
+    public void addCompra(OrdenCompra compra) {
         this.compras.add(compra);
     }
 
-    public OrdenCompra getCompra(int indice){
-        if (indice < 0 || indice > this.compras.size()-1) return null;
+    public OrdenCompra getCompra(int indice) {
+        if (indice < 0 || indice > this.compras.size() - 1) return null;
         return this.compras.get(indice);
     }
 

@@ -49,21 +49,22 @@ public class OrdenCompra {
     public void setDocumento(DocTributario documento) {
         this.documento = documento;
     }
-    public void addPago(Pago pago){
+
+    public void addPago(Pago pago) {
         this.pagos.add(pago);
     }
 
-    public Pago getPago(int indice){
-        if (indice < 0 || indice > this.pagos.size()-1) return null;
+    public Pago getPago(int indice) {
+        if (indice < 0 || indice > this.pagos.size() - 1) return null;
         return this.pagos.get(indice);
     }
 
-    public void addDetalleOrden(DetalleOrden orden){
+    public void addDetalleOrden(DetalleOrden orden) {
         this.ordenes.add(orden);
     }
 
-    public DetalleOrden getOrden(int indice){
-        if (indice < 0 || indice > this.ordenes.size()-1) return null;
+    public DetalleOrden getOrden(int indice) {
+        if (indice < 0 || indice > this.ordenes.size() - 1) return null;
         return this.ordenes.get(indice);
     }
 
@@ -78,7 +79,6 @@ public class OrdenCompra {
 
     public void calcPeso() {
     }
-
 
 
     public String toString() {
