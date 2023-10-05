@@ -33,19 +33,23 @@ public class DetalleOrden {
         this.compra = compra;
     }
 
-    public void calcPrecio() {
+    public float calcPrecio() {
+        return this.calcPrecioSinIVA() + calcIVA();
     }
 
-    public void calcPrecioSinIVA() {
+    public float calcPrecioSinIVA() {
+        return this.articulo.getPrecio() * this.cantidad;
     }
 
-    public void calcIVA() {
+    public float calcIVA() {
+        return this.calcPrecioSinIVA() * 0.19f;
     }
 
-    public void calcPeso() {
+    public float calcPeso() {
+        return this.articulo.getPeso() * this.cantidad;
     }
 
     public String toString() {
-        return "DetalleOrden " + this.cantidad;
+        return "DetalleOrden " + this.cantidad + "x " + this.articulo.getNombre();
     }
 }
