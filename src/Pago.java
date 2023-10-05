@@ -35,7 +35,6 @@ public abstract class Pago {
         this.compra = compra;
     }
 
-
     public String toString() {
         return "Monto: " + this.monto
                 + " Fecha: " + this.fecha.toString();

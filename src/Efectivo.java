@@ -6,7 +6,7 @@ public class Efectivo extends Pago {
     }
 
     public float calcDevolucion() {
-        return  this.getMonto() - this.getCompra().calcPrecio();
+        return this.getMonto() - this.getCompra().calcPrecio();
     }
 
     public String toString() {
