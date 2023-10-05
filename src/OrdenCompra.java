@@ -68,16 +68,32 @@ public class OrdenCompra {
         return this.ordenes.get(indice);
     }
 
-    public void calcPrecioSinIVA() {
+    public float calcPrecioSinIVA() {
+        float precio = 0;
+        for (DetalleOrden orden : this.ordenes) {
+            precio += orden.calcPrecioSinIVA();
+        }
+        return precio;
     }
 
-    public void calcIVA() {
+    public float calcIVA() {
+        float iva = 0;
+        for (DetalleOrden orden : this.ordenes) {
+            iva += orden.calcIVA();
+        }
+        return iva;
     }
 
-    public void calcPrecio() {
+    public float calcPrecio() {
+        return this.calcPrecioSinIVA() + this.calcIVA();
     }
 
-    public void calcPeso() {
+    public float calcPeso() {
+        float peso = 0;
+        for (DetalleOrden orden : this.ordenes) {
+            peso += orden.calcPeso();
+        }
+        return peso;
     }
 
 
