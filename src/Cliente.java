@@ -4,12 +4,13 @@ public class Cliente {
     private String nombre;
     private String rut;
     private Direccion direccion;
-    private ArrayList<OrdenCompra> compras;
+    private final ArrayList<OrdenCompra> compras;
 
     public Cliente(String nombre, String rut, Direccion direccion) {
         this.nombre = nombre;
         this.rut = rut;
         this.direccion = direccion;
+        this.compras = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -34,6 +35,15 @@ public class Cliente {
 
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
+    }
+
+    public void addCompra(OrdenCompra compra){
+        this.compras.add(compra);
+    }
+
+    public OrdenCompra getCompra(int indice){
+        if (indice < 0 || indice > this.compras.size()-1) return null;
+        return this.compras.get(indice);
     }
 
     public String toString() {
