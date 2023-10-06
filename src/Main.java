@@ -23,57 +23,59 @@ public class Main {
         Main.printArticulos(naranja, manzana, platano, tomate, palta);
 
         final OrdenCompra compraF = new OrdenCompra(new Date(), Main.ESTADO_COMPRANDO, felipe);
+        felipe.addCompra(compraF);
         // Llenando el carrito
         compraF.addDetalleOrden(manzana, 3); // 6600
         compraF.addDetalleOrden(naranja, 2); // 3000
         compraF.addDetalleOrden(platano, 4); // 5000
         compraF.addDetalleOrden(tomate, 1); // 2000
         compraF.addDetalleOrden(palta, 2); // 10000
-        Main.printCompra(compraF);
+        Main.printCompra(felipe.getCompra(0));
 
         // Pagando
         compraF.setEstado(Main.ESTADO_PAGANDO);
-        final Efectivo pagoEfectivoF = new Efectivo(30000, new Date(), compraF);
+        final Efectivo pagoEfectivoF = new Efectivo(40000, new Date(), compraF);
         compraF.addPago(pagoEfectivoF);
-        Main.printCompra(compraF);
+        Main.printCompra(felipe.getCompra(0));
 
         // Terminando compra
-        final float vuelto = pagoEfectivoF.calcDevolucion();
         final Boleta boletaF = new Boleta("3754198", felipe.getRut(), new Date(), direccionF, compraF);
         compraF.setDocumento(boletaF);
         compraF.setEstado(Main.ESTADO_PAGADO);
-        Main.printCompra(compraF);
+        Main.printCompra(felipe.getCompra(0));
 
         final OrdenCompra compraE = new OrdenCompra(new Date(), Main.ESTADO_COMPRANDO, enzo);
+        enzo.addCompra(compraE);
         // Llenando el carrito
         compraE.addDetalleOrden(manzana, 1); // 2200
         compraE.addDetalleOrden(naranja, 3); // 4500
         compraE.addDetalleOrden(platano, 4); // 5000
         compraE.addDetalleOrden(tomate, 1); // 2000
         compraE.addDetalleOrden(palta, 5); // 25000
-        Main.printCompra(compraE);
+        Main.printCompra(enzo.getCompra(0));
 
         // Pagando
         compraE.setEstado(Main.ESTADO_PAGANDO);
         final float precioCompraE = compraE.calcPrecio();
         final Tarjeta pagoTarjetaE = new Tarjeta(precioCompraE, new Date(), "Debito", "651249512749512", compraE);
         compraE.addPago(pagoTarjetaE);
-        Main.printCompra(compraE);
+        Main.printCompra(enzo.getCompra(0));
 
         // Terminando compra
         final Boleta boletaE = new Boleta("847596", enzo.getRut(), new Date(), direccionE, compraE);
         compraE.setDocumento(boletaE);
         compraE.setEstado(Main.ESTADO_PAGADO);
-        Main.printCompra(compraE);
+        Main.printCompra(enzo.getCompra(0));
 
         final OrdenCompra compraMB = new OrdenCompra(new Date(), Main.ESTADO_COMPRANDO, mrBeast);
+        mrBeast.addCompra(compraMB);
         // Llenando el carrito
         compraMB.addDetalleOrden(manzana, 1000);
         compraMB.addDetalleOrden(naranja, 2000);
         compraMB.addDetalleOrden(platano, 3000);
         compraMB.addDetalleOrden(tomate, 4000);
         compraMB.addDetalleOrden(palta, 5000);
-        Main.printCompra(compraMB);
+        Main.printCompra(mrBeast.getCompra(0));
 
         // Pagando
         compraMB.setEstado(Main.ESTADO_PAGANDO);
@@ -82,13 +84,13 @@ public class Main {
         final Transferencia transferencia2MB = new Transferencia(precioCompraMB / 2, new Date(), "US Bank", "999888777666", compraMB);
         compraMB.addPago(transferencia1MB);
         compraMB.addPago(transferencia2MB);
-        Main.printCompra(compraMB);
+        Main.printCompra(mrBeast.getCompra(0));
 
         // Terminando compra
         final Factura facturaMB = new Factura("847596", mrBeast.getRut(), new Date(), direccionMB, compraMB);
         compraMB.setDocumento(facturaMB);
         compraMB.setEstado(Main.ESTADO_PAGADO);
-        Main.printCompra(compraMB);
+        Main.printCompra(mrBeast.getCompra(0));
     }
 
     static public void printClientes(Cliente... clientes) {
@@ -110,6 +112,7 @@ public class Main {
     static public void printCompra(OrdenCompra compra) {
         final String estado = compra.getEstado();
         System.out.println(compra.toString());
+        System.out.println(compra.getCliente().toString());
 
         if (estado.equals(Main.ESTADO_COMPRANDO)) {
             System.out.println("Carrito:");
@@ -142,7 +145,13 @@ public class Main {
         }
 
         if (estado.equals(Main.ESTADO_PAGADO)) {
+            Pago pago = compra.getPago(0);
+            if (pago instanceof Efectivo efectivo) {
+                System.out.println("Vuelto: $" + efectivo.calcDevolucion());
+            }
+
             System.out.println(compra.getDocumento().toString());
+            System.out.println();
         }
     }
 }

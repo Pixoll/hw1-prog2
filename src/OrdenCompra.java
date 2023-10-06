@@ -98,6 +98,8 @@ public class OrdenCompra {
 
     public String toString() {
         return "OrdenCompra " + this.fecha
-                + " Estado: " + this.estado;
+                + " Estado: " + this.estado
+                + " $" + this.calcPrecio()
+                + " (" + this.calcPeso() + "kg)";
     }
 }

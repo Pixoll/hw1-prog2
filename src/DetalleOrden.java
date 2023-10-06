@@ -50,6 +50,9 @@ public class DetalleOrden {
     }
 
     public String toString() {
-        return "DetalleOrden " + this.cantidad + "x " + this.articulo.getNombre();
+        return "DetalleOrden " + this.cantidad
+                + "x " + this.articulo.getNombre()
+                + " $" + this.calcPrecio()
+                + " (" + this.calcPeso() + "kg)";
     }
 }
