@@ -27,7 +27,7 @@ public class Transferencia extends Pago {
     }
 
     public String toString() {
-        return "Transferencia "
+        return "Transferencia"
                 + " Banco: " + this.banco
                 + " #Cuenta: " + this.numCuenta
                 + " " + super.toString();

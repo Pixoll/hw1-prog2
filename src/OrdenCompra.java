@@ -96,7 +96,6 @@ public class OrdenCompra {
         return peso;
     }
 
-
     public String toString() {
         return "OrdenCompra " + this.fecha
                 + " Estado: " + this.estado;

@@ -44,9 +44,9 @@ public class Articulo {
     }
 
     public String toString() {
-        return "Articulo" + this.nombre
+        return "Articulo " + this.nombre
                 + " (" + this.descripcion + ")"
                 + " Peso: " + this.peso
-                + " Precio" + this.precio;
+                + " Precio: " + this.precio;
     }
 }

@@ -56,7 +56,7 @@ public abstract class DocTributario {
     }
 
     public String toString() {
-        return this.numero
+        return "#" + this.numero
                 + " Rut: " + this.rut
                 + " Fecha: " + this.fecha.toString();
     }
