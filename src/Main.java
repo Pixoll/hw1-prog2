@@ -10,8 +10,8 @@ public class Main {
         final Direccion direccionE = new Direccion("Calle xyz #987");
         final Direccion direccionMB = new Direccion("Calle dolar #666");
 
-        final Cliente felipe = new Cliente("Felipe", "21.502.400-8", direccionF);
-        final Cliente enzo = new Cliente("Enzo", "20.618.797-2", direccionE);
+        final Cliente felipe = new Cliente("Felipe", "12.345.678-9", direccionF);
+        final Cliente enzo = new Cliente("Enzo", "15.651.753-9", direccionE);
         final Cliente mrBeast = new Cliente("Mr. Beast", "13.752.798-K", direccionMB);
         Main.printClientes(felipe, enzo, mrBeast);
 
@@ -94,7 +94,7 @@ public class Main {
     static public void printClientes(Cliente... clientes) {
         System.out.println("Clientes:");
         for (Cliente cliente : clientes) {
-            System.out.println(cliente);
+            System.out.println(cliente.toString());
         }
         System.out.println();
     }
@@ -102,14 +102,14 @@ public class Main {
     static public void printArticulos(Articulo... articulos) {
         System.out.println("Articulos disponibles:");
         for (Articulo articulo : articulos) {
-            System.out.println(articulo);
+            System.out.println(articulo.toString());
         }
         System.out.println();
     }
 
     static public void printCompra(OrdenCompra compra) {
         final String estado = compra.getEstado();
-        System.out.println(compra);
+        System.out.println(compra.toString());
 
         if (estado.equals(Main.ESTADO_COMPRANDO)) {
             System.out.println("Carrito:");
@@ -119,7 +119,7 @@ public class Main {
             while (true) {
                 orden = compra.getOrden(i++);
                 if (orden == null) break;
-                System.out.println("#" + i + ": " + orden);
+                System.out.println("#" + i + ": " + orden.toString());
             }
 
             System.out.println();
@@ -134,7 +134,7 @@ public class Main {
             while (true) {
                 pago = compra.getPago(i++);
                 if (pago == null) break;
-                System.out.println("#" + i + ": " + pago);
+                System.out.println("#" + i + ": " + pago.toString());
             }
 
             System.out.println();
@@ -142,7 +142,7 @@ public class Main {
         }
 
         if (estado.equals(Main.ESTADO_PAGADO)) {
-            System.out.println(compra.getDocumento());
+            System.out.println(compra.getDocumento().toString());
         }
     }
 }
