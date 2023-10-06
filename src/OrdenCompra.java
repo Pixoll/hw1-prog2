@@ -9,11 +9,11 @@ public class OrdenCompra {
     private final ArrayList<Pago> pagos;
     private final ArrayList<DetalleOrden> ordenes;
 
-    public OrdenCompra(Date fecha, String estado, Cliente cliente, DocTributario documento) {
+    public OrdenCompra(Date fecha, String estado, Cliente cliente) {
         this.fecha = fecha;
         this.estado = estado;
         this.cliente = cliente;
-        this.documento = documento;
+        this.documento = null;
         this.pagos = new ArrayList<>();
         this.ordenes = new ArrayList<>();
     }
@@ -59,8 +59,8 @@ public class OrdenCompra {
         return this.pagos.get(indice);
     }
 
-    public void addDetalleOrden(DetalleOrden orden) {
-        this.ordenes.add(orden);
+    public void addDetalleOrden(Articulo articulo, int cantidad) {
+        this.ordenes.add(new DetalleOrden(articulo, cantidad, this));
     }
 
     public DetalleOrden getOrden(int indice) {

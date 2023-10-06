@@ -4,8 +4,8 @@ public class Tarjeta extends Pago {
     private String tipo;
     private String numTransaccion;
 
-    public Tarjeta(float monto, Date fecha, String tipo, String numTransaccion) {
-        super(monto, fecha);
+    public Tarjeta(float monto, Date fecha, String tipo, String numTransaccion, OrdenCompra compra) {
+        super(monto, fecha, compra);
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }
